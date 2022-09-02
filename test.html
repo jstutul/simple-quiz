@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Quiz Module</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="quiz-heading">Quiz</h1>
+      <div class="app-body">
+        <h1 class="answer-key">Answer Key</h1>
+        <div class="question-card">
+          <div style="display: flex; justify-content: space-between">
+            <div><hh5 id="question">Question</hh5></div>
+            <div><h4 id="questionmark">02</h4></div>
+          </div>
+          <form>
+            <input type="radio" id="op1" name="op" value="1" />
+            <label for="op1">op1</label><br />
+            <input type="radio" id="op2" name="op" value="2" />
+            <label for="op2">op2</label><br />
+            <input type="radio" id="op3" name="op" value="3" />
+            <label for="op3">op3</label><br />
+            <input type="radio" id="op4" name="op" value="4" />
+            <label for="op4">op4</label><br />
+            <div id="res" class="idle">Empty</div>
+            <br />
+            <input type="submit" name="submit" value="Submit" class="submit" />
+          </form>
+        </div>
+        <button>Restart</button>
+      </div>
+    </div>
+    <script src="./test.js"></script>
+  </body>
+</html>

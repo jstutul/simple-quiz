@@ -1,0 +1,680 @@
+let question;
+let form;
+let res;
+let qno;
+let score;
+let marks;
+let questions = {
+  Question: [
+    {
+      QSerialNo: 1,
+      QID: 3048,
+      Question:
+        "Five cars have a race. The Honda beat Dodge but couldn't overtake the Smart Car. The Mini failed to overtake the Audi but beat the Smart Car. Which car came third?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20176,
+          OptText: "Honda",
+        },
+        {
+          OptID: 20177,
+          OptText: "Dodge",
+        },
+        {
+          OptID: 20178,
+          OptText: "Smart Card",
+        },
+        {
+          OptID: 20179,
+          OptText: "Mini",
+        },
+      ],
+    },
+    {
+      QSerialNo: 2,
+      QID: 3049,
+      Question: "What do you understand by-“If K is there L has to be there”",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20180,
+          OptText: "A & L always be together",
+        },
+        {
+          OptID: 20181,
+          OptText: "K is not there, then L will not be there",
+        },
+        {
+          OptID: 20182,
+          OptText: "K is there, then L will also be there",
+        },
+        {
+          OptID: 20183,
+          OptText: "K & L will always be not together",
+        },
+      ],
+    },
+    {
+      QSerialNo: 3,
+      QID: 3052,
+      Question: "Computer virus is a-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20192,
+          OptText: "Hardware",
+        },
+        {
+          OptID: 20193,
+          OptText: "Software",
+        },
+        {
+          OptID: 20194,
+          OptText: "Windows",
+        },
+        {
+          OptID: 20195,
+          OptText: "Spam",
+        },
+      ],
+    },
+    {
+      QSerialNo: 4,
+      QID: 3046,
+      Question: "How many members’ country in SAARC?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20168,
+          OptText: "7",
+        },
+        {
+          OptID: 20169,
+          OptText: "6",
+        },
+        {
+          OptID: 20170,
+          OptText: "9",
+        },
+        {
+          OptID: 20171,
+          OptText: "8",
+        },
+      ],
+    },
+    {
+      QSerialNo: 5,
+      QID: 3027,
+      Question: "Choose the correct synonym for- “Menacing”",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20092,
+          OptText: "Encouraging",
+        },
+        {
+          OptID: 20093,
+          OptText: "Alarming",
+        },
+        {
+          OptID: 20094,
+          OptText: "Promising",
+        },
+        {
+          OptID: 20095,
+          OptText: "Auspicious",
+        },
+      ],
+    },
+    {
+      QSerialNo: 6,
+      QID: 3045,
+      Question: "World biggest Airport situated at-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20164,
+          OptText: "New York",
+        },
+        {
+          OptID: 20165,
+          OptText: "Delhi",
+        },
+        {
+          OptID: 20166,
+          OptText: "London",
+        },
+        {
+          OptID: 20167,
+          OptText: "Dammam",
+        },
+      ],
+    },
+    {
+      QSerialNo: 7,
+      QID: 3036,
+      Question:
+        "City B is 5 miles east of city A. City C is 10 miles southeast of city B. Which of the following is the closest to the distance from city A to city C.?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20128,
+          OptText: "11 miles",
+        },
+        {
+          OptID: 20129,
+          OptText: "12 miles",
+        },
+        {
+          OptID: 20130,
+          OptText: "13 miles",
+        },
+        {
+          OptID: 20131,
+          OptText: "14 miles",
+        },
+      ],
+    },
+    {
+      QSerialNo: 8,
+      QID: 3040,
+      Question: "30% of 10 is 10% of which?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20144,
+          OptText: "30",
+        },
+        {
+          OptID: 20145,
+          OptText: "60",
+        },
+        {
+          OptID: 20146,
+          OptText: "300",
+        },
+        {
+          OptID: 20147,
+          OptText: "600",
+        },
+      ],
+    },
+    {
+      QSerialNo: 9,
+      QID: 3041,
+      Question: "If x+y=12 and x-y=2, then xy will be-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20148,
+          OptText: "35",
+        },
+        {
+          OptID: 20149,
+          OptText: "140",
+        },
+        {
+          OptID: 20150,
+          OptText: "70",
+        },
+        {
+          OptID: 20151,
+          OptText: "144",
+        },
+      ],
+    },
+    {
+      QSerialNo: 10,
+      QID: 3029,
+      Question: "EAGER : INDIFFERENT",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20100,
+          OptText: "concerned : careful",
+        },
+        {
+          OptID: 20101,
+          OptText: "anxious : nervous",
+        },
+        {
+          OptID: 20102,
+          OptText: "enthusiastic: half hearted",
+        },
+        {
+          OptID: 20103,
+          OptText: "devoted: dedicated",
+        },
+      ],
+    },
+    {
+      QSerialNo: 11,
+      QID: 3033,
+      Question: "The expression ‘take into account’ means",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20116,
+          OptText: "assess",
+        },
+        {
+          OptID: 20117,
+          OptText: "consider",
+        },
+        {
+          OptID: 20118,
+          OptText: "count numbers",
+        },
+        {
+          OptID: 20119,
+          OptText: "think seriously",
+        },
+      ],
+    },
+    {
+      QSerialNo: 12,
+      QID: 3047,
+      Question: "Women’s Asia Cup Cricket-2018 held in-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20172,
+          OptText: "Malayasia",
+        },
+        {
+          OptID: 20173,
+          OptText: "India",
+        },
+        {
+          OptID: 20174,
+          OptText: "Bangladesh",
+        },
+        {
+          OptID: 20175,
+          OptText: "Nepal",
+        },
+      ],
+    },
+    {
+      QSerialNo: 13,
+      QID: 3031,
+      Question: "'Maiden speech' means.",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20108,
+          OptText: "Late speech",
+        },
+        {
+          OptID: 20109,
+          OptText: "Early speech",
+        },
+        {
+          OptID: 20110,
+          OptText: "Final speech",
+        },
+        {
+          OptID: 20111,
+          OptText: "First speech",
+        },
+      ],
+    },
+    {
+      QSerialNo: 14,
+      QID: 3050,
+      Question: "Last question",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20184,
+          OptText: "Honda",
+        },
+        {
+          OptID: 20185,
+          OptText: "Ctrl+Q",
+        },
+        {
+          OptID: 20186,
+          OptText: "Ctrl+P",
+        },
+        {
+          OptID: 20187,
+          OptText: "Ctrl+V",
+        },
+      ],
+    },
+    {
+      QSerialNo: 15,
+      QID: 3037,
+      Question:
+        "Mr.  Ahsan spent 1/3 of his money for a pen and Tk.5 for a pencil. If he still had ½ of his money left, how much money did he have originally?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20132,
+          OptText: "50",
+        },
+        {
+          OptID: 20133,
+          OptText: "30",
+        },
+        {
+          OptID: 20134,
+          OptText: "60",
+        },
+        {
+          OptID: 20135,
+          OptText: "20",
+        },
+      ],
+    },
+    {
+      QSerialNo: 16,
+      QID: 3042,
+      Question:
+        "If in 1997, 1998 and 1999 a worker received 10% more in salary each year then he did the previous year, how much more did he receive in 1999 than in 1997?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20152,
+          OptText: "10%",
+        },
+        {
+          OptID: 20153,
+          OptText: "11%",
+        },
+        {
+          OptID: 20154,
+          OptText: "20%",
+        },
+        {
+          OptID: 20155,
+          OptText: "21%",
+        },
+      ],
+    },
+    {
+      QSerialNo: 17,
+      QID: 3032,
+      Question: "The correct spelling is-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20112,
+          OptText: "Humourous",
+        },
+        {
+          OptID: 20113,
+          OptText: "Humourious",
+        },
+        {
+          OptID: 20114,
+          OptText: "Humorous",
+        },
+        {
+          OptID: 20115,
+          OptText: "Humorious",
+        },
+      ],
+    },
+    {
+      QSerialNo: 18,
+      QID: 3035,
+      Question:
+        "Successive discount of 20% and 15% are equal to a single discount of –",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20124,
+          OptText: "30%",
+        },
+        {
+          OptID: 20125,
+          OptText: "32%",
+        },
+        {
+          OptID: 20126,
+          OptText: "34%",
+        },
+        {
+          OptID: 20127,
+          OptText: "35%",
+        },
+      ],
+    },
+    {
+      QSerialNo: 19,
+      QID: 3053,
+      Question:
+        'If user selects invalid/incorrect file and click on upload button, then choose file should be empty as well as showing alert message. If user selects % invalid & incorrect file and click on "upload" button, then choose file should be empty as well as showing alert message\'s',
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20196,
+          OptText: "Hardware",
+        },
+        {
+          OptID: 20197,
+          OptText: "Software",
+        },
+        {
+          OptID: 20198,
+          OptText: "Windows",
+        },
+      ],
+    },
+    {
+      QSerialNo: 20,
+      QID: 3028,
+      Question: "Choose the correct synonym for- “Extempore”",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20096,
+          OptText: "Planned",
+        },
+        {
+          OptID: 20097,
+          OptText: "Improvise",
+        },
+        {
+          OptID: 20098,
+          OptText: "Impromptu",
+        },
+        {
+          OptID: 20099,
+          OptText: "Immediate",
+        },
+      ],
+    },
+    {
+      QSerialNo: 21,
+      QID: 3043,
+      Question: "Lunar eclipse occurs on-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20156,
+          OptText: "A moonless day",
+        },
+        {
+          OptID: 20157,
+          OptText: "A new moon day",
+        },
+        {
+          OptID: 20158,
+          OptText: "A full moon day",
+        },
+        {
+          OptID: 20159,
+          OptText: "A half moon day",
+        },
+      ],
+    },
+    {
+      QSerialNo: 22,
+      QID: 3051,
+      Question: "Shortcut key of reviewing a text-",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20188,
+          OptText: "Hardware",
+        },
+        {
+          OptID: 20189,
+          OptText: "Software",
+        },
+        {
+          OptID: 20190,
+          OptText: "Windows",
+        },
+        {
+          OptID: 20191,
+          OptText: "Spam",
+        },
+      ],
+    },
+    {
+      QSerialNo: 23,
+      QID: 3038,
+      Question:
+        "If two typists can type two pages in the two minutes how many typists will it take to type 18 pages in six minutes.",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20136,
+          OptText: "3",
+        },
+        {
+          OptID: 20137,
+          OptText: "6",
+        },
+        {
+          OptID: 20138,
+          OptText: "9",
+        },
+        {
+          OptID: 20139,
+          OptText: "12",
+        },
+      ],
+    },
+    {
+      QSerialNo: 24,
+      QID: 3044,
+      Question: "Who is known as the 'Lady of the Lamp'?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20160,
+          OptText: "Sorojini Naidu",
+        },
+        {
+          OptID: 20161,
+          OptText: "Hellen Killer",
+        },
+        {
+          OptID: 20162,
+          OptText: "Florence Nightingale",
+        },
+        {
+          OptID: 20163,
+          OptText: "Madame Teresa",
+        },
+      ],
+    },
+    {
+      QSerialNo: 25,
+      QID: 3039,
+      Question:
+        "Two men, starting at the same point, walk in opposite directions for 4 meters, turn left and walk another 3 meters. What is the distance between them?",
+      QMarks: "01.00",
+      Options: [
+        {
+          OptID: 20140,
+          OptText: "7 meters",
+        },
+        {
+          OptID: 20141,
+          OptText: "14 meters",
+        },
+        {
+          OptID: 20142,
+          OptText: "10 meters",
+        },
+        {
+          OptID: 20143,
+          OptText: "6 meters",
+        },
+      ],
+    },
+  ],
+};
+
+function getNextQuestion() {
+  qno++;
+  ques = questions["Question"][qno];
+  question.innerHTML = ques.Question;
+  marks.innerHTML = ques.QMarks;
+  const labels = document.querySelectorAll("label");
+  labels.forEach((label, idx) => {
+    label.innerHTML = ques.Options[idx].OptText;
+  });
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  if (!form.op.value) {
+    alert("Please select an option");
+  } else if (form.submit.classList.contains("submit")) {
+    form.submit.classList.remove("submit");
+    form.submit.value = "Next";
+    form.submit.classList.add("next");
+    qno++;
+    getNextQuestion();
+    form.submit.classList.remove("Next");
+    form.submit.value = "submit";
+    form.submit.classList.add("submit");
+    form.reset();
+  }
+}
+
+const init = () => {
+  let body = `<h1 class="quiz-heading">Quiz</h1>
+    <div class="app-body">
+      <h1 class="answer-key">Answer Key</h1>
+      <div class="question-card">
+        <div style="display: flex; justify-content: space-between">
+          <div><h2 id="question">Question</h2></div>
+          <div><h3 id="questionmark">02</h3></div>
+        </div>
+        <form>
+          <input type="radio" id="op1" name="op" value="0" />
+          <label for="op1">op1</label><br />
+          <input type="radio" id="op2" name="op" value="1" />
+          <label for="op2">op2</label><br />
+          <input type="radio" id="op3" name="op" value="2" />
+          <label for="op3">op3</label><br />
+          <input type="radio" id="op4" name="op" value="3" />
+          <label for="op4">op4</label><br />
+          <div id="res" class="idle">Empty</div>
+          <br />
+          <input type="submit" name="submit" value="Submit" class="submit" />
+        </form>
+      </div>
+      <button>Restart</button>
+    </div>`;
+
+  question = document.querySelector("#question");
+  form = document.querySelector("form");
+  res = document.querySelector("#res");
+  marks = document.querySelector("#questionmark");
+  qno = -1;
+  score = 0;
+  form.addEventListener("submit", handleSubmit);
+  document.querySelector("button").addEventListener("click", init);
+  getNextQuestion();
+};
+init();
