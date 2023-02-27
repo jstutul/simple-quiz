@@ -3,6 +3,7 @@ let form;
 let res;
 let qno;
 let score;
+let k=100;
 
 const questions = [
   {
